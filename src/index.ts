@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client';
 const client=new PrismaClient();
 
 
-const app=express();
+export const app=express();
 
 app.use(express.json());
 
@@ -40,6 +40,6 @@ app.get("/host",(req,res)=>{
 })
 
 
-app.listen(3000,()=>{
-    console.log("server started");
-})
+// app.listen(3000,()=>{
+//     console.log("server started");
+// })
