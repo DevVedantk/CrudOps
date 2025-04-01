@@ -27,6 +27,12 @@ app.get("/testing",(req,res)=>{
     res.send("Testing route for CI CD")
 })
 
+app.get("/test",(req,res)=>{
+    res.send("testing....")
+})
+
+
+
 app.post("/signup",async(req,res)=>{
    try{ 
     const {email,password}=req.body;
