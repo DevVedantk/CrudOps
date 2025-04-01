@@ -1,5 +1,6 @@
 import express from 'express';
 import os from 'os';
+import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
 const client=new PrismaClient();
 
@@ -7,8 +8,13 @@ const client=new PrismaClient();
 export const app=express();
 
 app.use(express.json());
+app.use(cors({
+   origin:"http://localhost:5173",
+   credentials:true  
+}))
 
-app.get("/",async(req,res)=>{
+
+app.get("/data",async(req,res)=>{
     const data=await client.users.findMany({});
      
     res.json({
@@ -18,17 +24,22 @@ app.get("/",async(req,res)=>{
 })
 
 app.post("/signup",async(req,res)=>{
-   try{ console.log(req);
+   try{ 
     const {email,password}=req.body;
+    console.log(password)
+    console.log(email);
 
-    await client.users.create({
+  const putIntoDB=await client.users.create({
         data:{
             email,
             password
         }
     })
 
+    console.log(putIntoDB);
+
     res.json({
+        putIntoDB,
         message:"signed upp!!"
     })}  catch(e){
         console.log(e)
@@ -40,6 +51,6 @@ app.get("/host",(req,res)=>{
 })
 
 
-// app.listen(3000,()=>{
-//     console.log("server started");
-// })
+app.listen(3000,()=>{
+    console.log("server started");
+})

@@ -13,8 +13,10 @@
   "type": "commonjs",
   "dependencies": {
     "@prisma/client": "^6.5.0",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "bun": "^1.2.7",
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "prisma": "^6.5.0",
     "typescript": "^5.8.2"
