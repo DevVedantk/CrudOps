@@ -26,11 +26,15 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Load nvm
             [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-            cd /home/ubuntu/Continuous_Integeration_deployment
+            cd /home/ubuntu/CrudOps/backend
             git pull origin main
             npm install
             npm run build
             pm2 restart all
 
-            
+            cd /home/ubuntu/CrudOps/frontend/web
+            git pull origin main
+            npm install 
+            npm run build
+            pm2 restart all
           EOF
