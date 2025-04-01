@@ -29,12 +29,12 @@ function App() {
   
   }
  
-  return  <div className="h-screen w-full text-yellow-500 bg-green-900">
+  return  <div className="h-screen w-full text-black">
           <input ref={emailRef} type="text"  placeholder="Enter email"/>
           <input ref={passwordRef} type="text" placeholder="Enter password" />
           <button onClick={handlesubmit}>Submit</button>
         
-        <div className="h-48 w-32 bg-black">
+        <div className="h-48 w-32 text-black">
           {data}
         </div>
   </div>
