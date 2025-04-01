@@ -27,6 +27,7 @@ jobs:
             [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
             cd /home/ubuntu/CrudOps/backend
+            git clean -fd
             git pull origin main
             npm install
             npm run build
@@ -34,6 +35,7 @@ jobs:
             cd ../..
 
             cd /home/ubuntu/CrudOps/frontend/web
+            git clean -fd
             git pull origin main
             npm install 
             npm run build
