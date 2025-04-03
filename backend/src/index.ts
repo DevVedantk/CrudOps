@@ -56,6 +56,10 @@ app.post("/signup",async(req,res)=>{
     }
 })
 
+app.get("/backend",(req,res)=>{
+   res.send("Backend working with CICD");
+})
+
 app.get("/host",(req,res)=>{
     res.send(os.hostname())
 })
