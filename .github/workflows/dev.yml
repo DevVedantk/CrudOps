@@ -33,9 +33,4 @@ jobs:
             npm install
             npm run build
             pm2 restart all
-
-            cd /home/ubuntu/CrudOps/frontend/web
-            npm install 
-            npm run build
-            pm2 restart all
           EOF

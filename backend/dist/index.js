@@ -31,6 +31,12 @@ exports.app.get("/data", (req, res) => __awaiter(void 0, void 0, void 0, functio
         data
     });
 }));
+exports.app.get("/testing", (req, res) => {
+    res.send("Testing route for CI CD");
+});
+exports.app.get("/test", (req, res) => {
+    res.send("testing....");
+});
 exports.app.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { email, password } = req.body;
